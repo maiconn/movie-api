@@ -1,6 +1,7 @@
 package com.example.movieapi.exceptions;
 
 import com.example.movieapi.dto.ErrorDTO;
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -30,9 +31,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(badRequest).body(new ErrorDTO(new Date(), badRequest.value(), errors.toString()));
     }
 
-    @ExceptionHandler(BusinessException.class)
-    public ResponseEntity<ErrorDTO> handleException(BusinessException ex) {
-        // Lógica de tratamento da exceção
+    @ExceptionHandler({BusinessException.class, ConstraintViolationException.class})
+    public ResponseEntity<ErrorDTO> handleException(Exception ex) {
         HttpStatus badRequest = HttpStatus.BAD_REQUEST;
         return ResponseEntity.status(badRequest).body(new ErrorDTO(new Date(), badRequest.value(), ex.getMessage()));
     }

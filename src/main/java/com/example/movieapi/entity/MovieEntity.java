@@ -1,16 +1,21 @@
 package com.example.movieapi.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.Set;
 
 @Getter
 @Setter
 @Entity(name = "Movie")
+@AllArgsConstructor
+@NoArgsConstructor
 public class MovieEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_movie")
     private Long idMovie;
 
@@ -21,7 +26,12 @@ public class MovieEntity {
 
     private String studios;
 
-    private String producers;
-
     private Boolean winner;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "movie_producer",
+            joinColumns = @JoinColumn(name = "id_movie"),
+            inverseJoinColumns = @JoinColumn(name = "id_producer"))
+    private Set<ProducerEntity> producers;
+
 }
