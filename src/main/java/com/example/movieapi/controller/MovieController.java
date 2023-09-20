@@ -32,4 +32,9 @@ public class MovieController {
     public void remove(@PathVariable Long idMovie) {
         movieService.remove(idMovie);
     }
+
+    @DeleteMapping("/delete-all")
+    public void removeAll() {
+        movieService.removeAll();
+    }
 }

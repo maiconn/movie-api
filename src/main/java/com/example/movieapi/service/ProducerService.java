@@ -68,6 +68,10 @@ public class ProducerService {
             previousProducer = producerWinnerDTO.getNameProducer();
 
         }
+        return getProducerAwardDTO(producerReturnList, minInterval, maxInterval);
+    }
+
+    private ProducerAwardDTO getProducerAwardDTO(List<ProducerInvervalAwardDTO> producerReturnList, int minInterval, int maxInterval) {
         ProducerAwardDTO producerAwardDTO = new ProducerAwardDTO();
 
         Integer finalMaxInterval = maxInterval;

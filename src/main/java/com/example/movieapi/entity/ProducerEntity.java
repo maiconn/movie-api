@@ -23,6 +23,6 @@ public class ProducerEntity {
     private String name;
 
     @JsonIgnore
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "producers")
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "producers", cascade = CascadeType.ALL)
     private Set<MovieEntity> movies;
 }

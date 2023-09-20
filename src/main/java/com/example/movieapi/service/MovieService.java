@@ -75,4 +75,8 @@ public class MovieService {
     public void remove(Long idMovie) {
         movieRepository.deleteById(idMovie);
     }
+
+    public void removeAll() {
+        movieRepository.deleteAll();
+    }
 }

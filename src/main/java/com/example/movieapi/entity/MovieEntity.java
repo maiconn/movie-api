@@ -28,7 +28,7 @@ public class MovieEntity {
 
     private Boolean winner;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JoinTable(name = "movie_producer",
             joinColumns = @JoinColumn(name = "id_movie"),
             inverseJoinColumns = @JoinColumn(name = "id_producer"))
