@@ -9,8 +9,9 @@ This application is a API RESTful to enable it possible to read the list of nomi
 2. [ Endpoints ](#endpoints)
 3. [ Run On Terminal ](#run-on-terminal)
 4. [ Swagger URL ](#swagger-url)
-5. [ About the intregation tests ](#about-the-intregation-tests)
-6. [ FAQ ](#faq)
+5. [ H2 Console ](#h2-console)
+6. [ About the intregation tests ](#about-the-intregation-tests)
+7. [ FAQ ](#faq)
 
 ### Technical Specifications
 - Java JDK 17
@@ -45,6 +46,12 @@ obs.: the `JAVA_HOME` environment variable must be assigned in your operational 
 
 ### Swagger URL
 - http://localhost:8080/swagger-ui/index.html
+
+### H2 Console
+- http://localhost:8080/h2-console/
+- JDBC URL: `jdbc:h2:mem:moviedb`
+- User Name: `sa`
+- Password: `password`
 
 ### About the intregation tests
 - The report of integration tests is at:
