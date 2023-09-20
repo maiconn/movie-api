@@ -61,7 +61,7 @@ This integration test coverages 71% lines of code and 88% of classes.
 ### FAQ
 
 #### This application loads the .csv file on start?
-Yes, the application loads the file "src/main/resources/movielist.csv" and insert this data on H2 database when starts the application.
+Yes, the application loads the file `src/main/resources/movielist.csv` and insert this data on H2 database when starts the application.
 
 #### How to reset and upload a new CSV file?
-To do this, you need to call endpoint "DELETE /movie/delete-all" and finally call endpoint "POST /movie/upload-data" passing the CSV file. This opperation can be done Swagger.
+To do this, you need to call endpoint `DELETE /movie/delete-all` and finally call endpoint `POST /movie/upload-data` passing the CSV file. This operation can be done Swagger.
