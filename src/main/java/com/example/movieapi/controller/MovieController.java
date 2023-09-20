@@ -24,7 +24,7 @@ public class MovieController {
     }
 
     @PostMapping(value = "/upload-data", consumes = {"multipart/form-data"})
-    public List<MovieDTO> inserir(@ModelAttribute @NotNull MultipartFile file) throws BusinessException {
+    public List<MovieDTO> uploadData(@ModelAttribute @NotNull MultipartFile file) throws BusinessException {
         return movieService.processFile(file);
     }
 
