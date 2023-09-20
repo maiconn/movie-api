@@ -1,7 +1,7 @@
 # Movie API
 
 ### Reference Documentation
-This application is a API RESTful to enable it possible to read the list of nominees and winners for the Worst Film category at the Golden Raspberry Awards.
+This application is an API RESTful to enable it possible to read the list of nominees and winners for the Worst Film category at the Golden Raspberry Awards.
 
 ### Summary
 
@@ -10,7 +10,7 @@ This application is a API RESTful to enable it possible to read the list of nomi
 3. [ Run On Terminal ](#run-on-terminal)
 4. [ Swagger URL ](#swagger-url)
 5. [ H2 Console ](#h2-console)
-6. [ About the intregation tests ](#about-the-intregation-tests)
+6. [ About the integration tests ](#about-the-integration-tests)
 7. [ FAQ ](#faq)
 
 ### Technical Specifications
@@ -53,12 +53,12 @@ obs.: the `JAVA_HOME` environment variable must be assigned in your operational 
 - User Name: `sa`
 - Password: `password`
 
-### About the intregation tests
+### About the integration tests
 - The report of integration tests is at:
   `./build/reports/tests/test/classes/com.example.movieapi.MovieApiApplicationTests.html`
 #### This integration tests verify the following contexts:
 - `shouldGetAllDataOK()`: this test verify if "GET /movie" returns status 200.
-- `shouldTestResultOfAwardInterval()`: this test verify the producer with the longest gap between two consecutive awards, and the one who received two awards the fastest. It must returns the min with Joel Silver producere with interval = 1 between 1990 and 1991. Finally, the max with Matthew Vaughn producer with interval = 13 between 2002 and 2015.
+- `shouldTestResultOfAwardInterval()`: this test verify the producer with the longest gap between two consecutive awards, and the one who received two awards the fastest. It must return the min with Joel Silver producer with interval = 1 between 1990 and 1991. Finally, the max with Matthew Vaughn producer with interval = 13 between 2002 and 2015.
 - `shouldDeleteDataOK()`: this test verify if "DELETE /movie/{id}" returns 200 code when we delete the movie by id.
 - `shouldDeleteAllDataOK()`: this test verify if "DELETE /movie/delete-all" returns 200 code.
 - `shouldIfHaveNoData()`: finally, this last test verify if the endpoint "GET /movie" returns no data after delete all data
